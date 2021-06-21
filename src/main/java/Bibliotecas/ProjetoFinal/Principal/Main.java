@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		Path arquivo = Paths.get("ListaAtividades.txt");
 		TxtUtils.AtividadeDiaSemana(arquivo);
-		System.out.println("");
+		System.out.println(" ");
 		
 		TxtUtils.TotalPorEsporte(arquivo);
 		Interface.PlotaGrafico(arquivo);

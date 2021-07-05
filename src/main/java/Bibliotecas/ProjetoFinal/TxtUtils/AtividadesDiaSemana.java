@@ -1,11 +1,9 @@
 package Bibliotecas.ProjetoFinal.TxtUtils;
-
 import java.nio.file.Path;
 import java.util.LinkedHashMap;
 import java.util.List;
 import Bibliotecas.ProjetoFinal.Atividade.Atividade;
 import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Funcoes;
-
 public class AtividadesDiaSemana {
 	public static LinkedHashMap<String, String> AtividadeDia(Path arquivo) {
 		LinkedHashMap<String, String> AtividadesDia = new LinkedHashMap<>();

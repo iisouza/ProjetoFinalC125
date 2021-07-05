@@ -1,13 +1,8 @@
 package Bibliotecas.ProjetoFinal.Esportista;
-import java.util.ArrayList;
-import java.util.List;
-import Bibliotecas.ProjetoFinal.Equipamentos.Bicicleta;
 public class Ciclista extends Atleta {
-	List <Bicicleta> ListaBicicletas = new ArrayList <>();
 	private int numAtividades;
-	
-	public Ciclista(String nome, int idade) {
-		super(nome, idade);
+	public Ciclista(int id, String nome, int idade) {
+		super(id, nome, idade);
 	}
 
 	@Override

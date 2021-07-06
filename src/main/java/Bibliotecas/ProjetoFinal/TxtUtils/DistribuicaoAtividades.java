@@ -13,10 +13,8 @@ public class DistribuicaoAtividades {
 			if(atividade.getNomeAtleta().equals("Igor")) {
 				if(atividade.getEstilo().equals("Caminhada"))
 					atividades[1]++;
-				
 				else if(atividade.getEstilo().equals("Pedal"))
 					atividades[2]++;
-				
 				else
 					atividades[0]++;
 			}
@@ -24,10 +22,8 @@ public class DistribuicaoAtividades {
 			else if(atividade.getNomeAtleta().equals("Danilo")) {
 				if(atividade.getEstilo().equals("Caminhada"))
 					atividades[4]++;
-				
 				else if(atividade.getEstilo().equals("Pedal"))
 					atividades[5]++;
-				
 				else
 					atividades[3]++;
 			}
@@ -38,18 +34,25 @@ public class DistribuicaoAtividades {
 			soma += atividades[i];
 		
 		System.out.println("   A equipe realizou " + soma + " atividades, sendo:");
-		System.out.println("      - " + (atividades[0] + atividades[3]) + " corridas");
-		System.out.println("      - " + (atividades[1] + atividades[4]) + " caminhadas");
-		System.out.println("      - " + (atividades[2] + atividades[5]) + " pedais\n");
+		System.out.println("      - " + (atividades[0] + 
+				atividades[3]) + " corridas");
+		System.out.println("      - " + (atividades[1] + 
+				atividades[4]) + " caminhadas");
+		System.out.println("      - " + (atividades[2] + 
+				atividades[5]) + " pedais\n");
 		
 		System.out.println("      -> Igor realizou " +
-				(atividades[0] + atividades[1] + atividades[2]) + " atividades, sendo:");
-		System.out.println("         - " + atividades[0] + " corridas");
-		System.out.println("         - " + atividades[1] + " caminhadas");
-		System.out.println("         - " + atividades[2] + " pedais\n");
+			(atividades[0] + atividades[1] + atividades[2]) + " atividades, sendo:");
+		System.out.println("         - " + 
+						atividades[0] + " corridas");
+		System.out.println("         - " + 
+						atividades[1] + " caminhadas");
+		System.out.println("         - " + 
+						atividades[2] + " pedais\n");
 		
 		System.out.println("      -> Danilo realizou as outras " + 
-				(atividades[3] + atividades[4] + atividades[5]) + " atividades, sendo:");
+				(atividades[3] + atividades[4] + 
+						atividades[5]) + " atividades, sendo:");
 		System.out.println("         - " + atividades[3] + " corridas");
 		System.out.println("         - " + atividades[4] + " caminhadas");
 		System.out.println("         - " + atividades[5] + " pedais\n");

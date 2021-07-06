@@ -46,7 +46,7 @@ public class FormatarPrimeiraTabela {
 			int totalp = Integer.parseInt(valor.split("/")[0].strip()) 
 					+ Integer.parseInt(valor.split("/")[1].strip());
 			System.out.print("|  " + valor.split("/")[0].strip() + " atv. |  " 
-							+ valor.split("/")[1].strip() + " atv. |  " + totalp + " atv. |");
+				+ valor.split("/")[1].strip() + " atv. |  " + totalp + " atv. |");
 			
 			System.out.print("     |");
 			for (int i = 0; i < (15 - aux) / 2; i++)
@@ -58,18 +58,19 @@ public class FormatarPrimeiraTabela {
 			
 			totalp = Integer.parseInt(valor.split("/")[2].strip()) 
 					+ Integer.parseInt(valor.split("/")[3].strip());
-			System.out.println("|  " + form.format(Integer.parseInt(valor.split("/")[2].strip())) + " m |" + 
-					"  " + form.format(Integer.parseInt(valor.split("/")[3].strip()))  + " m |  " + 
-					form.format(totalp)  + " m |");
+			System.out.println("|  " + form.format(Integer.parseInt(valor.split("/")[2]
+					.strip())) + " m |  " + form.format(Integer.parseInt(valor.split("/")[3]
+					.strip()))  + " m |  " + form.format(totalp)  + " m |");
 			
 			for(int i = 0; i < 4; i++)
 				total[i] += Integer.parseInt(valor.split("/")[i].strip());	
 		});
 		System.out.println("   ——————————————————————————————————————————————————" + 
 				"     ——————————————————————————————————————————————————");
-		System.out.println("   |     Total     | " + total[0] + " atv. | " 
-		+ total[1] + " atv. | " + (total[0] + total[1]) + " atv. |" + "     |     Total     | " 
-				+ form.format(total[2]) + " m | " + form.format(total[3]) + " m | " + form.format(total[2] + total[3]) + " m |");
+		System.out.println("   |     Total     | " + total[0] + " atv. | " + total[1] + 
+			" atv. | " + (total[0] + total[1]) + " atv. |" + "     |     Total     | " 
+			+ form.format(total[2]) + " m | " + form.format(total[3]) + " m | " + 
+			form.format(total[2] + total[3]) + " m |");
 		System.out.println("   ——————————————————————————————————————————————————" + 
 				"     ——————————————————————————————————————————————————");
 		System.out.println("");

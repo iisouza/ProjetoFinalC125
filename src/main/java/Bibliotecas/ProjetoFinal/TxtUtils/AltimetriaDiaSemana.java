@@ -13,14 +13,18 @@ public class AltimetriaDiaSemana {
 
 		for (Atividade atividade:ListaAtividades) {
 			if (atividade.getNomeAtleta().equals("Igor"))
-				DiasContador1[Funcoes.PosicaoElemento(atividade.getDiaSemana())] += atividade.getAltimetria();
+				DiasContador1[Funcoes.PosicaoElemento(atividade.getDiaSemana())] 
+						+= atividade.getAltimetria();
 
 			if (atividade.getNomeAtleta().equals("Danilo"))
-				DiasContador2[Funcoes.PosicaoElemento(atividade.getDiaSemana())] += atividade.getAltimetria();
+				DiasContador2[Funcoes.PosicaoElemento(atividade.getDiaSemana())] 
+						+= atividade.getAltimetria();
 		}
 
 		for (int i = 0; i < 7; i++)
-			AltimetriaDia.put(Funcoes.DiaSemana(i), DiasContador1[i] + "/" + DiasContador2[i]);
+			AltimetriaDia.put(Funcoes.DiaSemana(i), DiasContador1[i] + 
+					"/" + DiasContador2[i]);
+		
 		return AltimetriaDia;
 	}
 }

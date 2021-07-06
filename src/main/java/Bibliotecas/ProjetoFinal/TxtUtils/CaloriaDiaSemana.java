@@ -13,14 +13,18 @@ public class CaloriaDiaSemana {
 
 		for (Atividade atividade : ListaAtividades) {
 			if (atividade.getNomeAtleta().equals("Igor"))
-				DiasContador1[Funcoes.PosicaoElemento(atividade.getDiaSemana())] += atividade.getCalorias();
+				DiasContador1[Funcoes.PosicaoElemento(atividade.getDiaSemana())] 
+						+= atividade.getCalorias();
 
 			if (atividade.getNomeAtleta().equals("Danilo"))
-				DiasContador2[Funcoes.PosicaoElemento(atividade.getDiaSemana())] += atividade.getCalorias();
+				DiasContador2[Funcoes.PosicaoElemento(atividade.getDiaSemana())] 
+						+= atividade.getCalorias();
 		}
 
 		for (int i = 0; i < 7; i++)
-			CaloriasDia.put(Funcoes.DiaSemana(i), DiasContador1[i] + "/" + DiasContador2[i]);
+			CaloriasDia.put(Funcoes.DiaSemana(i), DiasContador1[i] 
+					+ "/" + DiasContador2[i]);
+		
 		return CaloriasDia;
 	}
 }

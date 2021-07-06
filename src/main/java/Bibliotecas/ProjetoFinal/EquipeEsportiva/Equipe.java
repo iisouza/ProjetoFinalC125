@@ -4,7 +4,8 @@ public class Equipe {
 	private String nomeEquipe, nomeTreinador, dataFundacao;
 	private Atleta[] ListaAtletas = new Atleta[5];
 	
-	public Equipe(String nomeEquipe, int qtdAtletas, String nomeTreinador, String dataFundacao) {
+	public Equipe(String nomeEquipe, int qtdAtletas, 
+			String nomeTreinador, String dataFundacao) {
 		this.nomeEquipe = nomeEquipe;
 		this.ListaAtletas = new Atleta[qtdAtletas];
 		this.nomeTreinador = nomeTreinador;
@@ -17,13 +18,13 @@ public class Equipe {
 				ListaAtletas[i] = atleta;
 				break;
 			}
-		
 		return;
 	}
 	
 	public void MostraInfo() {
-		System.out.println("   A " + this.nomeEquipe + " comandada pelo treinador " + 
-				this.nomeTreinador + " foi fundada em " + this.dataFundacao + ".");
+		System.out.println("   A " + this.nomeEquipe + 
+				" comandada pelo treinador " + this.nomeTreinador + 
+				" foi fundada em " + this.dataFundacao + ".");
 		System.out.println("   Atletas representantes: " + this.ListaAtletas.length);
 		for(Atleta atleta : ListaAtletas)
 			atleta.MostraInfo();

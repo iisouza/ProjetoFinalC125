@@ -50,9 +50,9 @@ public class FormatarSegundaTabela {
 			double totalp = (Double.parseDouble(valor.split("/")[0].strip()) 
 					+ Double.parseDouble(valor.split("/")[1].strip()));
 			atv.append(totalp);
-			System.out.print("|   " + valor.split("/")[0].strip().replace(".", ",") + " km |   " 
-							+ valor.split("/")[1].strip().replace(".", ",") + " km |   " 
-							+ atv.toString().replace(".", ",") + " km |");
+			System.out.print("|   " + valor.split("/")[0].strip().replace(".", ",") 
+				+ " km |   " + valor.split("/")[1].strip().replace(".", ",") + 
+				" km |   " + atv.toString().replace(".", ",") + " km |");
 			atv.delete(0, atv.length());
 			
 			System.out.print("     |");
@@ -65,8 +65,9 @@ public class FormatarSegundaTabela {
 			
 			totalp = Integer.parseInt(valor.split("/")[2].strip()) 
 					+ Integer.parseInt(valor.split("/")[3].strip());
-			System.out.println("| " + form2.format(Integer.parseInt(valor.split("/")[2].strip())) + " kcal. |" + 
-			" " + form2.format(Integer.parseInt(valor.split("/")[3].strip())) + " kcal. |  " + form2.format(totalp) + " kcal. |");
+			System.out.println("| " + form2.format(Integer.parseInt(valor.split("/")[2].
+				strip())) + " kcal. | " + form2.format(Integer.parseInt(valor.split("/")[3].
+				strip())) + " kcal. |  " + form2.format(totalp) + " kcal. |");
 			
 			total[0] += Double.parseDouble(valor.split("/")[0].strip());
 			total[1] += Double.parseDouble(valor.split("/")[1].strip());
@@ -76,8 +77,9 @@ public class FormatarSegundaTabela {
 		System.out.println("   ————————————————————————————————————————————————————————" + 
 				"     ———————————————————————————————————————————————————————————————");
 		System.out.println("   |     Total     | " + form1.format(total[0]) + " km | " 
-		+ form1.format(total[1]) + " km | " + form1.format((total[0] + total[1])) + " km |" + "     |     Total     | " 
-				+ form2.format(total[2]) + " kcal. | " + form2.format(total[3]) + " kcal. | " + form2.format(total[2] +total[3]) + " kcal. |");
+				+ form1.format(total[1]) + " km | " + form1.format((total[0] + total[1])) + 
+				" km |" + "     |     Total     | " + form2.format(total[2]) + " kcal. | " 
+				+ form2.format(total[3]) + " kcal. | " + form2.format(total[2] +total[3]) + " kcal. |");
 		System.out.println("   ————————————————————————————————————————————————————————" + 
 				"     ———————————————————————————————————————————————————————————————");
 		System.out.println("");

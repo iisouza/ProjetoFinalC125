@@ -17,15 +17,19 @@ public class DistanciaDiaSemana {
 		
 		for (Atividade atividade:ListaAtividades) {
 			if (atividade.getNomeAtleta().equals("Igor"))
-				DiasContador1[Funcoes.PosicaoElemento(atividade.getDiaSemana())] += atividade.getDistancia();
+				DiasContador1[Funcoes.PosicaoElemento(atividade.getDiaSemana())] 
+						+= atividade.getDistancia();
 
 			if (atividade.getNomeAtleta().equals("Danilo"))
-				DiasContador2[Funcoes.PosicaoElemento(atividade.getDiaSemana())] += atividade.getDistancia();
+				DiasContador2[Funcoes.PosicaoElemento(atividade.getDiaSemana())] 
+						+= atividade.getDistancia();
 		}
 
 		for (int i = 0; i < 7; i++)
-			DistanciaDia.put(Funcoes.DiaSemana(i), total.format(DiasContador1[i]).replace(",", ".")
-					 + "/" + total.format(DiasContador2[i]).replace(",", "."));
+			DistanciaDia.put(Funcoes.DiaSemana(i), 
+					total.format(DiasContador1[i]).replace(",", ".")
+					+ "/" + total.format(DiasContador2[i]).replace(",", "."));
+		
 		return DistanciaDia;
 	}
 }

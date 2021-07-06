@@ -1,5 +1,7 @@
 package Bibliotecas.ProjetoFinal.TxtUtils;
 import java.nio.file.Path;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.LinkedHashMap;
 import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Funcoes;
 public class FormatarPrimeiraTabela {
@@ -10,6 +12,8 @@ public class FormatarPrimeiraTabela {
 		StringBuilder atv = new StringBuilder();
 		AtividadesDia = AtividadesDiaSemana.AtividadeDia(arquivo);
 		AltimetriaDia = AltimetriaDiaSemana.AltimetriaDia(arquivo);
+		NumberFormat form = DecimalFormat.getNumberInstance();
+		form.setMaximumFractionDigits(0);
 		int total[] = new int[4];
 		for (int i = 0; i < 7; i++) {
 			atv.append(AtividadesDia.get(Funcoes.DiaSemana(i))).append("/")
@@ -18,16 +22,16 @@ public class FormatarPrimeiraTabela {
 			atv.delete(0, atv.length());
 		}
 		
-		System.out.println("\n     Número de atividades por dia por atleta" + 
-				"\t\t    Altimetria por dia por atleta");
-		System.out.println("     ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾" +
-				"\t\t    ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
-		System.out.println("   ———————————————————————————————————————————" + 
-				"     ———————————————————————————————————————————————");
-		System.out.println("   | Dia da semana |  Igor  | Danilo | Total |" + 
-				"     | Dia da semana |  Igor   | Danilo  |  Total  |");
-		System.out.println("   ———————————————————————————————————————————" + 
-				"     ———————————————————————————————————————————————");
+		System.out.println("\n\tNúmero de atividades por dia por atleta" + 
+				"\t\t\t    Altimetria por dia por atleta");
+		System.out.println("\t‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾" +
+				"\t\t\t    ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
+		System.out.println("   ——————————————————————————————————————————————————" + 
+				"     ——————————————————————————————————————————————————");
+		System.out.println("   | Dia da semana |   Igor   |  Danilo  |  Totais  |" + 
+				"     | Dia da semana |   Igor   |  Danilo  |  Totais  |");
+		System.out.println("   ——————————————————————————————————————————————————" + 
+				"     ——————————————————————————————————————————————————");
 		MapaOrdenado.forEach((chave, valor) -> {
 			chave = chave.substring(0, 1).toUpperCase().concat(chave.substring(1));
 			int aux = chave.length();
@@ -41,8 +45,8 @@ public class FormatarPrimeiraTabela {
 			
 			int totalp = Integer.parseInt(valor.split("/")[0].strip()) 
 					+ Integer.parseInt(valor.split("/")[1].strip());
-			System.out.print("|   " + valor.split("/")[0].strip() + "   |   " 
-							+ valor.split("/")[1].strip() + "   |   " + totalp + "  |");
+			System.out.print("|  " + valor.split("/")[0].strip() + " atv. |  " 
+							+ valor.split("/")[1].strip() + " atv. |  " + totalp + " atv. |");
 			
 			System.out.print("     |");
 			for (int i = 0; i < (15 - aux) / 2; i++)
@@ -54,19 +58,20 @@ public class FormatarPrimeiraTabela {
 			
 			totalp = Integer.parseInt(valor.split("/")[2].strip()) 
 					+ Integer.parseInt(valor.split("/")[3].strip());
-			System.out.println("|  " + valor.split("/")[2].strip() + " m |" + 
-			"  " + valor.split("/")[3].strip() + " m |  " + totalp + " m |");
+			System.out.println("|  " + form.format(Integer.parseInt(valor.split("/")[2].strip())) + " m |" + 
+					"  " + form.format(Integer.parseInt(valor.split("/")[3].strip()))  + " m |  " + 
+					form.format(totalp)  + " m |");
 			
 			for(int i = 0; i < 4; i++)
 				total[i] += Integer.parseInt(valor.split("/")[i].strip());	
 		});
-		System.out.println("   ———————————————————————————————————————————" + 
-				"     ———————————————————————————————————————————————");
-		System.out.println("   |     Total     |   " + total[0] + "  |   " 
-		+ total[1] + "  |  " + (total[0] + total[1]) + "  |" + "     |     Total     | " 
-				+ total[2] + " m | " + total[3] + " m | " + (total[2] + total[3]) + " m |");
-		System.out.println("   ———————————————————————————————————————————" + 
-				"     ———————————————————————————————————————————————");
+		System.out.println("   ——————————————————————————————————————————————————" + 
+				"     ——————————————————————————————————————————————————");
+		System.out.println("   |     Total     | " + total[0] + " atv. | " 
+		+ total[1] + " atv. | " + (total[0] + total[1]) + " atv. |" + "     |     Total     | " 
+				+ form.format(total[2]) + " m | " + form.format(total[3]) + " m | " + form.format(total[2] + total[3]) + " m |");
+		System.out.println("   ——————————————————————————————————————————————————" + 
+				"     ——————————————————————————————————————————————————");
 		System.out.println("");
 	}
 }

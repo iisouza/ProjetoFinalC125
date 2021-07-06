@@ -40,9 +40,12 @@ public class DiaAtivo {
 				System.out.print(DiasAtivos2.get(i));
 			
 				if(i != DiasAtivos2.size() - 1)
-					System.out.print(",");
+					if(i != DiasAtivos2.size() - 2)
+						System.out.print(", ");
+					else
+						System.out.print(" e ");
 				else
-					System.out.println(".");
+					System.out.println(".\n");
 			}
 		}
 	
@@ -56,7 +59,10 @@ public class DiaAtivo {
 				System.out.print(DiasAtivos1.get(i));
 			
 				if(i != DiasAtivos1.size() - 1)
-					System.out.print(", ");
+					if(i != DiasAtivos1.size() - 2)
+						System.out.print(", ");
+					else
+						System.out.print(" e ");
 				else
 					System.out.println(".\n");
 			}

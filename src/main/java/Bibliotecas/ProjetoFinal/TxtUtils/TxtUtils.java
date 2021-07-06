@@ -10,8 +10,6 @@ import Bibliotecas.ProjetoFinal.Atividade.Atividade;
 public class TxtUtils {
 	public static List<Atividade> LeituraTxt(Path arquivo) {
 		List<Atividade> ListaAtividades = new ArrayList<>();
-		NumberFormat total = DecimalFormat.getNumberInstance();
-		total.setMaximumFractionDigits(2);
 		
 		try {
 			List<String> atividades = Files.readAllLines(arquivo);

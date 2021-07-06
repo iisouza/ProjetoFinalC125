@@ -12,7 +12,8 @@ public class TotalEsporte {
 		double totalEsporte[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
 
 		for (Atividade atividade : ListaAtividades) {
-			if (atividade.getEstilo().equals("Corrida") || atividade.getEstilo().equals("Esteira")) {
+			if (atividade.getEstilo().equals("Corrida") || 
+					atividade.getEstilo().equals("Esteira")) {
 				totalEsporte[0] += atividade.getDistancia();
 				if (atividade.getNomeAtleta().equals("Igor"))
 					totalEsporte[1] += atividade.getDistancia();
@@ -37,52 +38,64 @@ public class TotalEsporte {
 			}
 		}
 
-		System.out.println("   -> Os atletas correram um total de " + total.format(totalEsporte[0]) + "km.");
-		System.out.println("      Desse total:");
+		System.out.println("   Os atletas correram um total de " + 
+				total.format(totalEsporte[0]) + "km.");
 		if (totalEsporte[1] > totalEsporte[2]) {
-			System.out.println("        - Igor correu mais: " + total.format(totalEsporte[1]) + "km - "
-					+ total.format(totalEsporte[1] * 100 / totalEsporte[0]) + "%");
-			System.out.println("        - Danilo correu menos: " + total.format(totalEsporte[2]) + "km - "
-					+ total.format(totalEsporte[2] * 100 / totalEsporte[0]) + "%\n");
+			System.out.println("\t- Igor correu " + total
+				.format(totalEsporte[1]) + "km - " + total
+				.format(totalEsporte[1] * 100 / totalEsporte[0]) + "%");
+			System.out.println("\t- Danilo correu " + total
+				.format(totalEsporte[2]) + "km - " + total
+				.format(totalEsporte[2] * 100 / totalEsporte[0]) + "%\n");
 		}
 
 		else {
-			System.out.println("        - Danilo correu mais: " + total.format(totalEsporte[2]) + "km - "
-					+ total.format(totalEsporte[2] * 100 / totalEsporte[0]) + "%");
-			System.out.println("        - Igor correu menos: " + total.format(totalEsporte[1]) + "km - "
-					+ total.format(totalEsporte[1] * 100 / totalEsporte[0]) + "%\n");
+			System.out.println("        - Danilo correu " + total
+				.format(totalEsporte[2]) + "km - " + total
+				.format(totalEsporte[2] * 100 / totalEsporte[0]) + "%");
+			System.out.println("        - Igor correu " + total
+				.format(totalEsporte[1]) + "km - "+ total
+				.format(totalEsporte[1] * 100 / totalEsporte[0]) + "%\n");
 		}
 
-		System.out.println("   -> Os atletas caminharam um total de " + total.format(totalEsporte[3]) + "km.");
-		System.out.println("      Desse total:");
+		System.out.println("   Os atletas caminharam um total de " + 
+				total.format(totalEsporte[3]) + "km.");
 		if (totalEsporte[4] > totalEsporte[5]) {
-			System.out.println("        - Igor caminhou mais: " + total.format(totalEsporte[4]) + "km - "
-					+ total.format(totalEsporte[4] * 100 / totalEsporte[3]) + "%");
-			System.out.println("        - Danilo caminhou menos: " + total.format(totalEsporte[5]) + "km - "
-					+ total.format(totalEsporte[5] * 100 / totalEsporte[3]) + "%\n");
+			System.out.println("\t- Igor caminhou " + total
+				.format(totalEsporte[4]) + "km - " + total
+				.format(totalEsporte[4] * 100 / totalEsporte[3]) + "%");
+			System.out.println("\t- Danilo caminhou " + total
+				.format(totalEsporte[5]) + "km - " + total
+				.format(totalEsporte[5] * 100 / totalEsporte[3]) + "%\n");
 		}
 
 		else {
-			System.out.println("        - Danilo caminhou mais: " + total.format(totalEsporte[5]) + "km - "
-					+ total.format(totalEsporte[5] * 100 / totalEsporte[3]) + "%");
-			System.out.println("        - Danilo correu menos: " + total.format(totalEsporte[4]) + "km - "
-					+ total.format(totalEsporte[4] * 100 / totalEsporte[3]) + "%\n");
+			System.out.println("\t- Danilo caminhou " + total
+				.format(totalEsporte[5]) + "km - " + total
+				.format(totalEsporte[5] * 100 / totalEsporte[3]) + "%");
+			System.out.println("\t- Danilo caminhou " + total
+				.format(totalEsporte[4]) + "km - " + total
+				.format(totalEsporte[4] * 100 / totalEsporte[3]) + "%\n");
 		}
 
-		System.out.println("   -> Os atletas pedalaram um total de " + total.format(totalEsporte[6]) + "km.");
-		System.out.println("      Desse total:");
+		System.out.println("   Os atletas pedalaram um total de " + total
+			.format(totalEsporte[6]) + "km.");
 		if (totalEsporte[6] > totalEsporte[7]) {
-			System.out.println("        - Igor pedalou mais: " + total.format(totalEsporte[7]) + "km - "
-					+ total.format(totalEsporte[7] * 100 / totalEsporte[6]) + "%");
-			System.out.println("        - Danilo pedalou menos: " + total.format(totalEsporte[8]) + "km - "
-					+ total.format(totalEsporte[8] * 100 / totalEsporte[6]) + "%\n");
+			System.out.println("\t- Igor pedalou " + total
+				.format(totalEsporte[7]) + "km - " + total
+				.format(totalEsporte[7] * 100 / totalEsporte[6]) + "%");
+			System.out.println("\t- Danilo pedalou " + total
+				.format(totalEsporte[8]) + "km - " + total
+				.format(totalEsporte[8] * 100 / totalEsporte[6]) + "%\n");
 		}
 
 		else {
-			System.out.println("        - Danilo pedalou mais: " + total.format(totalEsporte[8]) + "km - "
-					+ total.format(totalEsporte[8] * 100 / totalEsporte[6]) + "%");
-			System.out.println("        - Igor pedalou menos: " + total.format(totalEsporte[7]) + "km - "
-					+ total.format(totalEsporte[7] * 100 / totalEsporte[6]) + "%\n");
+			System.out.println("\t- Danilo pedalou " + total
+				.format(totalEsporte[8]) + "km - " + total
+				.format(totalEsporte[8] * 100 / totalEsporte[6]) + "%");
+			System.out.println("\t- Igor pedalou " + total
+				.format(totalEsporte[7]) + "km - " + total
+				.format(totalEsporte[7] * 100 / totalEsporte[6]) + "%\n");
 		}
 		
 		return totalEsporte;

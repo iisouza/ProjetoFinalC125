@@ -22,16 +22,17 @@ public class FormatarPrimeiraTabela {
 			atv.delete(0, atv.length());
 		}
 		
-		System.out.println("\n\tNúmero de atividades por dia por atleta" + 
-				"\t\t\t    Altimetria por dia por atleta");
-		System.out.println("\t‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾" +
-				"\t\t\t    ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
-		System.out.println("   ——————————————————————————————————————————————————" + 
-				"     ——————————————————————————————————————————————————");
-		System.out.println("   | Dia da semana |   Igor   |  Danilo  |  Totais  |" + 
-				"     | Dia da semana |   Igor   |  Danilo  |  Totais  |");
-		System.out.println("   ——————————————————————————————————————————————————" + 
-				"     ——————————————————————————————————————————————————");
+		System.out.println("\n\tNúmero de atividades por dia por atleta"
+			+ "\t\t\t    Altimetria por dia por atleta\n"
+			+ "\t‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾"
+			+ "\t\t\t    ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n"
+			+ "   ——————————————————————————————————————————————————" 
+			+ "     ——————————————————————————————————————————————————\n"
+			+ "   | Dia da semana |   Igor   |  Danilo  |  Totais  |"
+			+ "     | Dia da semana |   Igor   |  Danilo  |  Totais  |\n"
+			+ "   ——————————————————————————————————————————————————"
+			+ "     ——————————————————————————————————————————————————");
+		
 		MapaOrdenado.forEach((chave, valor) -> {
 			chave = chave.substring(0, 1).toUpperCase().concat(chave.substring(1));
 			int aux = chave.length();
@@ -46,9 +47,8 @@ public class FormatarPrimeiraTabela {
 			int totalp = Integer.parseInt(valor.split("/")[0].strip()) 
 					+ Integer.parseInt(valor.split("/")[1].strip());
 			System.out.print("|  " + valor.split("/")[0].strip() + " atv. |  " 
-				+ valor.split("/")[1].strip() + " atv. |  " + totalp + " atv. |");
+				+ valor.split("/")[1].strip() + " atv. |  " + totalp + " atv. |     |");
 			
-			System.out.print("     |");
 			for (int i = 0; i < (15 - aux) / 2; i++)
 				System.out.print(" ");
 
@@ -65,14 +65,14 @@ public class FormatarPrimeiraTabela {
 			for(int i = 0; i < 4; i++)
 				total[i] += Integer.parseInt(valor.split("/")[i].strip());	
 		});
-		System.out.println("   ——————————————————————————————————————————————————" + 
-				"     ——————————————————————————————————————————————————");
-		System.out.println("   |     Total     | " + total[0] + " atv. | " + total[1] + 
-			" atv. | " + (total[0] + total[1]) + " atv. |" + "     |     Total     | " 
+		System.out.println(
+			"   ——————————————————————————————————————————————————" 
+			+ "     ——————————————————————————————————————————————————\n"
+			+ "   |     Total     | " + total[0] + " atv. | " + total[1] 
+			+ " atv. | " + (total[0] + total[1]) + " atv. |" + "     |     Total     | " 
 			+ form.format(total[2]) + " m | " + form.format(total[3]) + " m | " + 
-			form.format(total[2] + total[3]) + " m |");
-		System.out.println("   ——————————————————————————————————————————————————" + 
-				"     ——————————————————————————————————————————————————");
-		System.out.println("");
+			form.format(total[2] + total[3]) + " m |\n"
+			+ "   ——————————————————————————————————————————————————"
+			+ "     ——————————————————————————————————————————————————\n");
 	}
 }

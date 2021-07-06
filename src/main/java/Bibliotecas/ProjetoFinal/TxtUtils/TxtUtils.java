@@ -27,8 +27,10 @@ public class TxtUtils {
 					hora.append("0");
 				hora.append(Integer.parseInt(dados[5])).append("seg");
 
-				ListaAtividades.add(new Atividade(dados[0], dados[1], Double.parseDouble(dados[2].replace(",", ".")),
-						hora.toString(), Integer.parseInt(dados[6]), Integer.parseInt(dados[7]), dados[8], dados[9]));
+				ListaAtividades.add(new Atividade(dados[0], dados[1], 
+					Double.parseDouble(dados[2].replace(",", ".")),
+					hora.toString(), Integer.parseInt(dados[6]), 
+					Integer.parseInt(dados[7]), dados[8], dados[9]));
 			});
 		} catch (IOException erro) {
 			System.out.println("Erro no arquivo!\n");

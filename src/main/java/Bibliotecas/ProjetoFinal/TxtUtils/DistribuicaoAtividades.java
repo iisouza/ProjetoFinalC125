@@ -33,28 +33,17 @@ public class DistribuicaoAtividades {
 		for(int i = 0; i < 6; i++)
 			soma += atividades[i];
 		
-		System.out.println("   A equipe realizou " + soma + " atividades, sendo:");
-		System.out.println("      - " + (atividades[0] + 
-				atividades[3]) + " corridas");
-		System.out.println("      - " + (atividades[1] + 
-				atividades[4]) + " caminhadas");
-		System.out.println("      - " + (atividades[2] + 
-				atividades[5]) + " pedais\n");
-		
-		System.out.println("      -> Igor realizou " +
-			(atividades[0] + atividades[1] + atividades[2]) + " atividades, sendo:");
-		System.out.println("         - " + 
-						atividades[0] + " corridas");
-		System.out.println("         - " + 
-						atividades[1] + " caminhadas");
-		System.out.println("         - " + 
-						atividades[2] + " pedais\n");
-		
-		System.out.println("      -> Danilo realizou as outras " + 
-				(atividades[3] + atividades[4] + 
-						atividades[5]) + " atividades, sendo:");
-		System.out.println("         - " + atividades[3] + " corridas");
-		System.out.println("         - " + atividades[4] + " caminhadas");
-		System.out.println("         - " + atividades[5] + " pedais\n");
+		System.out.println(
+			"   A equipe realizou " + soma + " atividades, sendo " 
+			+ (atividades[0] + atividades[3]) + " corridas, "
+			+ (atividades[1] + atividades[4]) + " caminhadas e "
+			+ (atividades[2] + atividades[5]) + " pedais.\n"
+			+ "\t- Danilo realizou " + (atividades[3] + atividades[4] 
+			+ atividades[5]) + " atividades, sendo " +  atividades[3] 
+			+ " corridas, " + atividades[4] + " caminhadas e "
+			+ atividades[5] + " pedais.\n\t- Igor realizou "
+			+ (atividades[0] + atividades[1] + atividades[2])
+			+ " atividades, sendo " + atividades[0] + " corridas, "
+			+ atividades[1] + " caminhadas e " + atividades[2] + " pedais.\n");
 	}
 }

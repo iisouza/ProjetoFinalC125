@@ -3,7 +3,6 @@ import Bibliotecas.ProjetoFinal.Esportista.Atleta;
 public class Equipe {
 	private String nomeEquipe, nomeTreinador, dataFundacao;
 	private Atleta[] ListaAtletas = new Atleta[5];
-	
 	public Equipe(String nomeEquipe, int qtdAtletas, 
 			String nomeTreinador, String dataFundacao) {
 		this.nomeEquipe = nomeEquipe;
@@ -22,10 +21,10 @@ public class Equipe {
 	}
 	
 	public void MostraInfo() {
-		System.out.println("   A " + this.nomeEquipe + 
-				" comandada pelo treinador " + this.nomeTreinador + 
-				" foi fundada em " + this.dataFundacao + ".");
-		System.out.println("   Atletas representantes: " + this.ListaAtletas.length);
+		System.out.println("\n   A " + this.nomeEquipe + 
+			" comandada pelo treinador " + this.nomeTreinador + 
+			" foi fundada em " + this.dataFundacao + ".\n" + 
+			"   Atletas representantes: " + this.ListaAtletas.length);
 		for(Atleta atleta : ListaAtletas)
 			atleta.MostraInfo();
 	}

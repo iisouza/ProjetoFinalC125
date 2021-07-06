@@ -6,7 +6,7 @@ import Bibliotecas.ProjetoFinal.Atividade.Atividade;
 import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Funcoes;
 public class AltimetriaDiaSemana {
 	public static LinkedHashMap<String, String> AltimetriaDia(Path arquivo) {
-		LinkedHashMap<String, String> AltimetriaDia = new LinkedHashMap<>();
+		LinkedHashMap<String, String> AltimetriaDiaSemana = new LinkedHashMap<>();
 		List<Atividade> ListaAtividades = TxtUtils.LeituraTxt(arquivo);
 		int DiasContador1[] = {0, 0, 0, 0, 0, 0, 0};
 		int DiasContador2[] = {0, 0, 0, 0, 0, 0, 0};
@@ -22,9 +22,9 @@ public class AltimetriaDiaSemana {
 		}
 
 		for (int i = 0; i < 7; i++)
-			AltimetriaDia.put(Funcoes.DiaSemana(i), DiasContador1[i] + 
+			AltimetriaDiaSemana.put(Funcoes.DiaSemana(i), DiasContador1[i] + 
 					"/" + DiasContador2[i]);
 		
-		return AltimetriaDia;
+		return AltimetriaDiaSemana;
 	}
 }

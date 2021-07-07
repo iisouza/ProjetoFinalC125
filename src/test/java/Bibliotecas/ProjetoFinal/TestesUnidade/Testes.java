@@ -31,6 +31,51 @@ public class Testes {
 	}
 	
 	@Test
+	public void TestaNomeArquivo() {
+		assertEquals("ListaAtividades.txt", arquivo.getFileName().toString());
+	}
+	
+	@Test
+	public void TestaSeNaoFaltaNenhumaAtividade() {
+		StringBuilder comp = new StringBuilder();
+		boolean ok = true;
+		String aux;
+		for(int i = 0; i < 389; i++) {
+			aux = ListaAtividades.get(i).getId();
+			comp.append("Atividade ").append(i + 1);
+			if(!aux.equals(comp.toString())) {
+				ok = false;
+				break;
+			}
+			comp.delete(0, comp.length());
+		}
+		assertEquals(true, ok);
+	}
+	
+	@Test
+	public void TestaDiasDaSemana() {
+		Set <String> dias = new HashSet <>();
+		String dia[] = {"domingo", "segunda-feira", "terca-feira",
+				"quarta-feira", "quinta-feira", "sexta-feira", "sabado"};
+		
+		for(Atividade atividade:ListaAtividades)
+			dias.add(atividade.getDiaSemana());
+		assertEquals(7, dias.size());
+		
+		boolean ok = true;
+		for(int i = 0; i < 7; i++) 
+			if(!dias.contains(dia[i])) {
+				ok = false;
+				break;
+			}
+			else
+				dias.remove(dia[i]);
+		
+		assertEquals(true, ok);
+		assertEquals(0, dias.size());
+	}
+	
+	@Test
 	public void TestaAtletasEquipe() {
 		Set <String> atletas = new HashSet <>();
 		for(Atividade atividade:ListaAtividades)
@@ -50,8 +95,9 @@ public class Testes {
 	public void TestaValoresPositivos() {
 		boolean ok = true;
 		for(Atividade atividade:ListaAtividades)
-			if(atividade.getDuracao().length() != 13 || atividade.getDistancia() < 0
-				|| atividade.getCalorias() < 0 || atividade.getAltimetria() < 0) {
+			if(atividade.getDuracao().length() > 8 || atividade.getDuracao().length() < 5 ||
+			   atividade.getDistancia() < 0 || atividade.getCalorias() < 0 || 
+			   atividade.getAltimetria() < 0) {
 				ok = false;
 				break;
 			}
@@ -92,5 +138,18 @@ public class Testes {
 			total1 += Integer.parseInt(valor.split("/")[1].strip());
 		});
 		assertEquals(186493, total1);
+	}
+	
+	@Test
+	public void TestaTempoTotal() {
+		String aux;
+		int total = 0;
+		for (Atividade atividade:ListaAtividades) {
+			aux = atividade.getDuracao();
+			String duracao[] = aux.split("-");
+			total += Integer.parseInt(duracao[0])*3600 + 
+					Integer.parseInt(duracao[1])*60 + Integer.parseInt(duracao[2]);
+		}
+		assertEquals(997343, total);
 	}
 }

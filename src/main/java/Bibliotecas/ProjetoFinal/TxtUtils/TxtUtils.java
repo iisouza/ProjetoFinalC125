@@ -17,19 +17,9 @@ public class TxtUtils {
 			atividades.forEach((descricao) -> {
 				String[] dados = descricao.split(";");
 				StringBuilder hora = new StringBuilder();
-				
-				if (Integer.parseInt(dados[3]) < 10)
-					hora.append("0");
-				hora.append(dados[3]).append("h");
-
-				if (Integer.parseInt(dados[4]) < 10)
-					hora.append("0");
-				hora.append(Integer.parseInt(dados[4])).append("min");
-
-				if (Integer.parseInt(dados[5]) < 10)
-					hora.append("0");
-				hora.append(Integer.parseInt(dados[5])).append("seg");
-
+				hora.append(dados[3]).append("-")
+					.append(dados[4]).append("-")
+					.append(dados[5]).append("-");
 				ListaAtividades.add(new Atividade(dados[0], dados[1], 
 					Double.parseDouble(dados[2].replace(",", ".")),
 					hora.toString(), Integer.parseInt(dados[6]), 
@@ -38,7 +28,6 @@ public class TxtUtils {
 		} catch (IOException erro) {
 			System.out.println("Erro no arquivo!\n");
 		}
-		
 		return ListaAtividades;
 	}
 }

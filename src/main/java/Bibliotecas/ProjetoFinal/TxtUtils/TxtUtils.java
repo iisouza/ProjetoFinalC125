@@ -17,6 +17,9 @@ public class TxtUtils {
 			atividades.forEach((descricao) -> {
 				String[] dados = descricao.split(";");
 				StringBuilder hora = new StringBuilder();
+				
+				if (Integer.parseInt(dados[3]) < 10)
+					hora.append("0");
 				hora.append(dados[3]).append("h");
 
 				if (Integer.parseInt(dados[4]) < 10)

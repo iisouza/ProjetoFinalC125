@@ -5,6 +5,7 @@ import Bibliotecas.ProjetoFinal.EquipeEsportiva.Equipe;
 import Bibliotecas.ProjetoFinal.Esportista.Atleta;
 import Bibliotecas.ProjetoFinal.TxtUtils.DiaAtivo;
 import Bibliotecas.ProjetoFinal.TxtUtils.DistribuicaoAtividades;
+import Bibliotecas.ProjetoFinal.TxtUtils.DistribuicaoTempo;
 import Bibliotecas.ProjetoFinal.TxtUtils.FormatarPrimeiraTabela;
 import Bibliotecas.ProjetoFinal.TxtUtils.FormatarSegundaTabela;
 import Bibliotecas.ProjetoFinal.TxtUtils.TempoDiaSemana;
@@ -26,6 +27,7 @@ public class Main {
 		FormatarPrimeiraTabela.Tabela(arquivo);
 		FormatarSegundaTabela.Tabela(arquivo);
 		TotalEsporte.TotalPorEsporte(arquivo);
+		DistribuicaoTempo.Panorama(arquivo);
 		DiaAtivo.DiaMaisAtivo(arquivo);
 		DistribuicaoAtividades.Panorama(arquivo);
 		TempoDiaSemana.TempoDia(arquivo);

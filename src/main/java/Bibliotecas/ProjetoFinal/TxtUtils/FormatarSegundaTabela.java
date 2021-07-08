@@ -78,7 +78,7 @@ public class FormatarSegundaTabela {
 				"     ———————————————————————————————————————————————————————————————");
 		System.out.println("   |     Total     | " + form1.format(total[0]) + " km | " 
 				+ form1.format(total[1]) + " km | " + form1.format((total[0] + total[1])) + 
-				" km |" + "     |    Total      | " + form2.format(total[2]) + " kcal. | " 
+				" km |" + "     |     Total     | " + form2.format(total[2]) + " kcal. | " 
 				+ form2.format(total[3]) + " kcal. | " + form2.format(total[2] +total[3]) + " kcal. |");
 		System.out.println("   ————————————————————————————————————————————————————————" + 
 				"     ———————————————————————————————————————————————————————————————");

@@ -20,8 +20,8 @@ public class AtividadesDiaSemana {
 		}
 
 		for (int i = 0; i < 7; i++)
-			AtividadesDia.put(Dias.DiaSemana(i), DiasContador1[i] 
-					+ "/" + DiasContador2[i]);
+			AtividadesDia.put(Dias.DiaSemana(i), 
+				DiasContador1[i] + "/" + DiasContador2[i]);
 		
 		return AtividadesDia;
 	}

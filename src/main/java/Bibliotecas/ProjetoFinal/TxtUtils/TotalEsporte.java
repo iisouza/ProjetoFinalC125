@@ -10,10 +10,11 @@ public class TotalEsporte {
 		List<Atividade> ListaAtividades = TxtUtils.LeituraTxt(arquivo);
 		LinkedHashMap<String, String> TemposDia = new LinkedHashMap<>();
 		TemposDia = TempoDiaSemana.TempoDia(arquivo);
+		
+		double totalEsporte[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
 		NumberFormat total = DecimalFormat.getNumberInstance();
 		total.setMaximumFractionDigits(2);
-		double totalEsporte[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
-		
+				
 		for (Atividade atividade:ListaAtividades) {
 			if (atividade.getEstilo().equals("Corrida") || 
 					atividade.getEstilo().equals("Esteira")) {
@@ -42,16 +43,18 @@ public class TotalEsporte {
 		}
 
 		System.out.println("   Os atletas correram um total de " + 
-				total.format(totalEsporte[0]) + "km:\t\t        "
-					+ "\t Tempo total por dia da semana por atleta");
+			total.format(totalEsporte[0]) + "km:\t\t        "
+			+ "\t Tempo total por dia da semana por atleta");
+		
 		System.out.println("        - Danilo correu " + total
 			.format(totalEsporte[2]) + "km - " + total
 			.format(totalEsporte[2] * 100 / totalEsporte[0]) + "%"
-					+ "\t\t\t\t ————————————————————————————————————————");
+			+ "\t\t\t\t ————————————————————————————————————————");
+		
 		System.out.println("        - Igor correu " + total
 			.format(totalEsporte[1]) + "km - "+ total
 			.format(totalEsporte[1] * 100 / totalEsporte[0]) + "%"
-				+ "\t\t   ————————————————————————————————————————————————————————————————————");
+			+ "\t\t   ————————————————————————————————————————————————————————————————————");
 					
 		System.out.println("\t\t\t\t\t\t\t   | Dia da semana |"
 				+ "      Igor      |     Danilo     |     Totais     |" 

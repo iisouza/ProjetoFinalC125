@@ -33,17 +33,19 @@ public class DistribuicaoAtividades {
 		for(int i = 0; i < 6; i++)
 			soma += atividades[i];
 		
-		System.out.println(
-			"   A equipe realizou " + soma + " atividades, sendo " 
+		System.out.println("   A equipe realizou " + soma + " atividades, sendo " 
 			+ (atividades[0] + atividades[3]) + " corridas, "
 			+ (atividades[1] + atividades[4]) + " caminhadas e "
-			+ (atividades[2] + atividades[5]) + " pedais.\n"
-			+ "\t- Danilo realizou " + (atividades[3] + atividades[4] 
+			+ (atividades[2] + atividades[5]) + " pedais.");
+		
+		System.out.println("\t- Danilo realizou " + (atividades[3] + atividades[4] 
 			+ atividades[5]) + " atividades, sendo " +  atividades[3] 
 			+ " corridas, " + atividades[4] + " caminhadas e "
-			+ atividades[5] + " pedais.\n\t- Igor realizou "
-			+ (atividades[0] + atividades[1] + atividades[2])
-			+ " atividades, sendo " + atividades[0] + " corridas, "
-			+ atividades[1] + " caminhadas e " + atividades[2] + " pedais.\n");
+			+ atividades[5] + " pedais.");
+		
+		System.out.println("\t- Igor realizou " + (atividades[0] + atividades[1]
+			+ atividades[2]) + " atividades, sendo " + atividades[0]
+			+ " corridas, " + atividades[1] + " caminhadas e "
+			+ atividades[2] + " pedais.");
 	}
 }

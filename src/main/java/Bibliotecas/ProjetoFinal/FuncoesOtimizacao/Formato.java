@@ -12,10 +12,11 @@ public class Formato {
 		duracao.append(hora).append("h");
 		if(minuto < 10)
 			duracao.append("0");
-		duracao.append(minuto).append("min");
 		
+		duracao.append(minuto).append("min");
 		if(segundos < 10)
 			duracao.append("0");
+		
 		duracao.append(segundos).append("seg");
 		return duracao.toString();
 	}

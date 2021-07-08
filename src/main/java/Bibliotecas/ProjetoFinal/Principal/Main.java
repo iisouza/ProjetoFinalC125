@@ -13,6 +13,7 @@ import Bibliotecas.ProjetoFinal.TxtUtils.TotalEsporte;
 public class Main {
 	public static void main(String[] args) {
 		Path arquivo = Paths.get("ListaAtividades.txt");
+		
 		Equipe equipe = new Equipe("Equipe C125", 2, "Phyll", "28/11/2015");
 		equipe.AdicionarAtleta(new Atleta(1, "Igor", 21,
 			"estudante de engenharia", "Santa Rita do Sapucaí/MG", "24/01/00."));

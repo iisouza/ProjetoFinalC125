@@ -3,6 +3,7 @@ public class Atleta {
 	private String nome, profissao;
 	private String naturalidade, dataNascimento;
 	private int idade, id;
+	
 	public Atleta(int id, String nome, int idade, String profissao,
 			String naturalidade, String dataNascimento) {
 		this.id = id;

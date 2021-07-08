@@ -11,12 +11,14 @@ public class DistribuicaoTempo {
 	public static void Panorama(Path arquivo) {
 		List<Atividade> ListaAtividades = new ArrayList<>();
 		ListaAtividades = TxtUtils.LeituraTxt(arquivo);
+		
 		LinkedHashMap<String, String> TemposDia = new LinkedHashMap<>();
 		TemposDia = TempoDiaSemana.TempoDia(arquivo);
-		NumberFormat form = DecimalFormat.getNumberInstance();
-		form.setMaximumFractionDigits(2);
+		
 		int tempo[] = new int[6];
 		int hora, minuto, segundo;
+		NumberFormat form = DecimalFormat.getNumberInstance();
+		form.setMaximumFractionDigits(2);
 		
 		for(Atividade atividade:ListaAtividades) {
 			hora = Integer.parseInt(atividade.getDuracao().split("-")[0].strip());
@@ -41,29 +43,33 @@ public class DistribuicaoTempo {
 		}
 			
 		System.out.println("   Os atletas correram por " + 
-				Formato.FormatoDuracao(tempo[0] + tempo[3]) + 
-				":\t\t   ————————————————————————————————————————————————————————————————————");
+			Formato.FormatoDuracao(tempo[0] + tempo[3]) + 
+			":\t\t   ————————————————————————————————————————————————————————————————————");
 		System.out.println("\t- Danilo correu por " + Formato.FormatoDuracao(tempo[3]) + " - " 
-				+ form.format((tempo[3] * 100.0)/(tempo[0] + tempo[3])) + "%\t   |     Total     | " + 
-				TemposDia.get("Total").split("/")[0] + " | " + TemposDia.get("Total")
-				.split("/")[1] + " | " + TemposDia.get("Total").split("/")[2] + " |");
+			+ form.format((tempo[3] * 100.0)/(tempo[0] + tempo[3])) + "%\t   |     Total     | " + 
+			TemposDia.get("Total").split("/")[0] + " | " + TemposDia.get("Total")
+			.split("/")[1] + " | " + TemposDia.get("Total").split("/")[2] + " |");
 		
 		System.out.println("\t- Igor correu por " + Formato.FormatoDuracao(tempo[0]) + 
-				" - " + form.format((tempo[0] * 100.0)/(tempo[0] + tempo[3])) + "%" + 
-				"\t   ————————————————————————————————————————————————————————————————————\n");
+			" - " + form.format((tempo[0] * 100.0)/(tempo[0] + tempo[3])) + "%" + 
+			"\t   ————————————————————————————————————————————————————————————————————\n");
 		
 		System.out.println("   Os atletas caminharam por " + 
-				Formato.FormatoDuracao(tempo[1] + tempo[4]) + ":");
+			Formato.FormatoDuracao(tempo[1] + tempo[4]) + ":");
+		
 		System.out.println("\t- Danilo correu por " + Formato.FormatoDuracao(tempo[4]) + 
-				" - " + form.format((tempo[4] * 100.0)/(tempo[1] + tempo[4])) + "%");
+			" - " + form.format((tempo[4] * 100.0)/(tempo[1] + tempo[4])) + "%");
+		
 		System.out.println("\t- Igor correu por " + Formato.FormatoDuracao(tempo[1]) + 
-				" - " + form.format((tempo[1] * 100.0)/(tempo[1] + tempo[4])) + "%\n");
+			" - " + form.format((tempo[1] * 100.0)/(tempo[1] + tempo[4])) + "%\n");
 		
 		System.out.println("   Os atletas pedalaram por " + 
-				Formato.FormatoDuracao(tempo[2] + tempo[5]) + ":");
+			Formato.FormatoDuracao(tempo[2] + tempo[5]) + ":");
+		
 		System.out.println("\t- Danilo correu por " + Formato.FormatoDuracao(tempo[5]) + 
-				" - " + form.format((tempo[5] * 100.0)/(tempo[2] + tempo[5])) + "%");
+			" - " + form.format((tempo[5] * 100.0)/(tempo[2] + tempo[5])) + "%");
+		
 		System.out.println("\t- Igor correu por " + Formato.FormatoDuracao(tempo[2]) + 
-				" - " + form.format((tempo[2] * 100.0)/(tempo[2] + tempo[5])) + "%\n");
+			" - " + form.format((tempo[2] * 100.0)/(tempo[2] + tempo[5])) + "%\n");
 	}
 }

@@ -1,7 +1,8 @@
 package Bibliotecas.ProjetoFinal.FuncoesOtimizacao;
 public class Dias {
-	private static String dias[] = {"domingo", "segunda-feira", "terca-feira", "quarta-feira",
-			"quinta-feira", "sexta-feira", "sabado"};
+	private static String dias[] = {"domingo", "segunda-feira", "terca-feira", 
+			"quarta-feira", "quinta-feira", "sexta-feira", "sabado"};
+	
 	public static int PosicaoElemento(String elemento) {
 		int posicao = -1;
 		for(int i = 0; i < 7; i++) 
@@ -9,6 +10,7 @@ public class Dias {
 				posicao = i;
 				break;
 			}
+		
 		return posicao;
 	}
 	

@@ -22,8 +22,8 @@ public class CaloriaDiaSemana {
 		}
 
 		for (int i = 0; i < 7; i++)
-			CaloriasDia.put(Dias.DiaSemana(i), DiasContador1[i] 
-					+ "/" + DiasContador2[i]);
+			CaloriasDia.put(Dias.DiaSemana(i), 
+				DiasContador1[i] + "/" + DiasContador2[i]);
 		
 		return CaloriasDia;
 	}

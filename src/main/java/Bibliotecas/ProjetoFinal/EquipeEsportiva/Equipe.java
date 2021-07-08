@@ -3,6 +3,7 @@ import Bibliotecas.ProjetoFinal.Esportista.Atleta;
 public class Equipe {
 	private String nomeEquipe, nomeTreinador, dataFundacao;
 	private Atleta[] ListaAtletas = new Atleta[5];
+	
 	public Equipe(String nomeEquipe, int qtdAtletas, 
 			String nomeTreinador, String dataFundacao) {
 		this.nomeEquipe = nomeEquipe;

@@ -3,6 +3,7 @@ public class Atividade {
 	private int altimetria, calorias;
 	private String id, diaSemana, duracao, nomeAtleta, Estilo;
 	private double distancia;
+	
 	public Atividade(String id, String diaSemana, double distancia,
 			String duracao, int altimetria, int calorias, 
 			String nomeAtleta, String estilo) {

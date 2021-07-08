@@ -2,8 +2,6 @@ package Bibliotecas.ProjetoFinal.TxtUtils;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 import Bibliotecas.ProjetoFinal.Atividade.Atividade;

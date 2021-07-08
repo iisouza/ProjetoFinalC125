@@ -9,11 +9,12 @@ public class TempoDiaSemana {
 	public static LinkedHashMap<String, String> TempoDia(Path arquivo) {
 		LinkedHashMap<String, String> TemposDia = new LinkedHashMap<>();
 		List<Atividade> ListaAtividades = TxtUtils.LeituraTxt(arquivo);
+		StringBuilder func = new StringBuilder();
+		String aux;
+		
 		int DiasContador1[] = {0, 0, 0, 0, 0, 0, 0};
 		int DiasContador2[] = {0, 0, 0, 0, 0, 0, 0};
-		StringBuilder func = new StringBuilder();
 		int total;
-		String aux;
 		
 		for (Atividade atividade:ListaAtividades) {
 			if (atividade.getNomeAtleta().equals("Igor")) {
@@ -56,6 +57,7 @@ public class TempoDiaSemana {
 		func.append(Formato.FormatoDuracao(totalp))
 			.append("/").append(Formato.FormatoDuracao(total));
 		TemposDia.put("Total", func.toString());
+		
 		return TemposDia;
 	}
 }

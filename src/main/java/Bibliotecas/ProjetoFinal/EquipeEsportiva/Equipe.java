@@ -32,16 +32,4 @@ public class Equipe {
 	public String getNomeEquipe() {
 		return nomeEquipe;
 	}
-
-	public String getNomeTreinador() {
-		return nomeTreinador;
-	}
-
-	public String getDataFundacao() {
-		return dataFundacao;
-	}
-
-	public Atleta[] getListaAtletas() {
-		return ListaAtletas;
-	}
 }

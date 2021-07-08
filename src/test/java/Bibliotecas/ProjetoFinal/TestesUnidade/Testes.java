@@ -1,5 +1,7 @@
 package Bibliotecas.ProjetoFinal.TestesUnidade;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashSet;
@@ -22,6 +24,11 @@ public class Testes {
 	@Before
 	public void Init() {
 		ListaAtividades = TxtUtils.LeituraTxt(arquivo);
+	}
+	
+	@Test
+	public void TestaLeituraArquivo() {
+		assertNotNull(ListaAtividades);
 	}
 	
 	@Test
@@ -49,7 +56,7 @@ public class Testes {
 			}
 			comp.delete(0, comp.length());
 		}
-		assertEquals(true, ok);
+		assertTrue(ok);
 	}
 	
 	@Test
@@ -71,7 +78,7 @@ public class Testes {
 			else
 				dias.remove(dia[i]);
 		
-		assertEquals(true, ok);
+		assertTrue(ok);
 		assertEquals(0, dias.size());
 	}
 	
@@ -80,7 +87,7 @@ public class Testes {
 		Set <String> atletas = new HashSet <>();
 		for(Atividade atividade:ListaAtividades)
 			atletas.add(atividade.getNomeAtleta());
-		assertEquals(true, atletas.size() == 2);
+		assertEquals(2, atletas.size());
 	}
 	
 	@Test
@@ -88,7 +95,7 @@ public class Testes {
 		Set <String> estilos = new HashSet <>();
 		for(Atividade atividade:ListaAtividades)
 			estilos.add(atividade.getEstilo());
-		assertEquals(true, estilos.size() == 4);
+		assertEquals(4, estilos.size());
 	}
 	
 	@Test
@@ -101,7 +108,7 @@ public class Testes {
 				ok = false;
 				break;
 			}
-		assertEquals(true, ok);
+		assertTrue(ok);
 	}
 	
 	@Test

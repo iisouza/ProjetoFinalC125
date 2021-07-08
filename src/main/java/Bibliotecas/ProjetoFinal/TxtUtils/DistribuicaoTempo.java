@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import Bibliotecas.ProjetoFinal.Atividade.Atividade;
-import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Funcoes;
+import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Formato;
 public class DistribuicaoTempo {
 	public static void Panorama(Path arquivo) {
 		List<Atividade> ListaAtividades = new ArrayList<>();
@@ -41,29 +41,29 @@ public class DistribuicaoTempo {
 		}
 			
 		System.out.println("   Os atletas correram por " + 
-				Funcoes.HoraFormat(tempo[0] + tempo[3]) + 
+				Formato.FormatoDuracao(tempo[0] + tempo[3]) + 
 				":\t\t   ————————————————————————————————————————————————————————————————————");
-		System.out.println("\t- Danilo correu por " + Funcoes.HoraFormat(tempo[3]) + " - " 
+		System.out.println("\t- Danilo correu por " + Formato.FormatoDuracao(tempo[3]) + " - " 
 				+ form.format((tempo[3] * 100.0)/(tempo[0] + tempo[3])) + "%\t   |     Total     | " + 
 				TemposDia.get("Total").split("/")[0] + " | " + TemposDia.get("Total")
 				.split("/")[1] + " | " + TemposDia.get("Total").split("/")[2] + " |");
 		
-		System.out.println("\t- Igor correu por " + Funcoes.HoraFormat(tempo[0]) + 
+		System.out.println("\t- Igor correu por " + Formato.FormatoDuracao(tempo[0]) + 
 				" - " + form.format((tempo[0] * 100.0)/(tempo[0] + tempo[3])) + "%" + 
 				"\t   ————————————————————————————————————————————————————————————————————\n");
 		
 		System.out.println("   Os atletas caminharam por " + 
-				Funcoes.HoraFormat(tempo[1] + tempo[4]) + ":");
-		System.out.println("\t- Danilo correu por " + Funcoes.HoraFormat(tempo[4]) + 
+				Formato.FormatoDuracao(tempo[1] + tempo[4]) + ":");
+		System.out.println("\t- Danilo correu por " + Formato.FormatoDuracao(tempo[4]) + 
 				" - " + form.format((tempo[4] * 100.0)/(tempo[1] + tempo[4])) + "%");
-		System.out.println("\t- Igor correu por " + Funcoes.HoraFormat(tempo[1]) + 
+		System.out.println("\t- Igor correu por " + Formato.FormatoDuracao(tempo[1]) + 
 				" - " + form.format((tempo[1] * 100.0)/(tempo[1] + tempo[4])) + "%\n");
 		
 		System.out.println("   Os atletas pedalaram por " + 
-				Funcoes.HoraFormat(tempo[2] + tempo[5]) + ":");
-		System.out.println("\t- Danilo correu por " + Funcoes.HoraFormat(tempo[5]) + 
+				Formato.FormatoDuracao(tempo[2] + tempo[5]) + ":");
+		System.out.println("\t- Danilo correu por " + Formato.FormatoDuracao(tempo[5]) + 
 				" - " + form.format((tempo[5] * 100.0)/(tempo[2] + tempo[5])) + "%");
-		System.out.println("\t- Igor correu por " + Funcoes.HoraFormat(tempo[2]) + 
+		System.out.println("\t- Igor correu por " + Formato.FormatoDuracao(tempo[2]) + 
 				" - " + form.format((tempo[2] * 100.0)/(tempo[2] + tempo[5])) + "%\n");
 	}
 }

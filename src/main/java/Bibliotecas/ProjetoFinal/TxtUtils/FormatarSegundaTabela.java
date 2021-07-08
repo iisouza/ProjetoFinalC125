@@ -3,7 +3,7 @@ import java.nio.file.Path;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.LinkedHashMap;
-import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Funcoes;
+import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Dias;
 public class FormatarSegundaTabela {
 	public static void Tabela(Path arquivo) {
 		LinkedHashMap<String, String> DistanciaDia = new LinkedHashMap<>();
@@ -20,9 +20,9 @@ public class FormatarSegundaTabela {
 		double total[] = new double[4];
 		
 		for (int i = 0; i < 7; i++) {
-			atv.append(DistanciaDia.get(Funcoes.DiaSemana(i))).append("/")
-			   .append(CaloriaDia.get(Funcoes.DiaSemana(i)));
-			MapaOrdenado.put(Funcoes.DiaSemana(i), atv.toString());
+			atv.append(DistanciaDia.get(Dias.DiaSemana(i))).append("/")
+			   .append(CaloriaDia.get(Dias.DiaSemana(i)));
+			MapaOrdenado.put(Dias.DiaSemana(i), atv.toString());
 			atv.delete(0, atv.length());
 		}
 		

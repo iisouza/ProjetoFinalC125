@@ -3,7 +3,8 @@ import java.nio.file.Path;
 import java.util.LinkedHashMap;
 import java.util.List;
 import Bibliotecas.ProjetoFinal.Atividade.Atividade;
-import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Funcoes;
+import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Dias;
+import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Formato;
 public class TempoDiaSemana {
 	public static LinkedHashMap<String, String> TempoDia(Path arquivo) {
 		LinkedHashMap<String, String> TemposDia = new LinkedHashMap<>();
@@ -20,7 +21,7 @@ public class TempoDiaSemana {
 				String duracao[] = aux.split("-");
 				total = Integer.parseInt(duracao[0])*3600 + 
 					Integer.parseInt(duracao[1])*60 + Integer.parseInt(duracao[2]);
-				DiasContador1[Funcoes.PosicaoElemento(atividade.getDiaSemana())] += total;
+				DiasContador1[Dias.PosicaoElemento(atividade.getDiaSemana())] += total;
 			}
 
 			if (atividade.getNomeAtleta().equals("Danilo")) {
@@ -28,17 +29,17 @@ public class TempoDiaSemana {
 				String duracao[] = aux.split("-");
 				total = Integer.parseInt(duracao[0])*3600 + 
 					Integer.parseInt(duracao[1])*60 + Integer.parseInt(duracao[2]);
-				DiasContador2[Funcoes.PosicaoElemento(atividade.getDiaSemana())] += total;
+				DiasContador2[Dias.PosicaoElemento(atividade.getDiaSemana())] += total;
 			}
 		}
 		
 		for(int i = 0; i < 7; i++) {
 			func.delete(0, func.length());
 			total = (DiasContador1[i] + DiasContador2[i]);
-			func.append(Funcoes.HoraFormat(DiasContador1[i]))
-			    .append("/").append(Funcoes.HoraFormat(DiasContador2[i]))
-			    .append("/").append(Funcoes.HoraFormat(total));
-			TemposDia.put(Funcoes.DiaSemana(i), func.toString());
+			func.append(Formato.FormatoDuracao(DiasContador1[i]))
+			    .append("/").append(Formato.FormatoDuracao(DiasContador2[i]))
+			    .append("/").append(Formato.FormatoDuracao(total));
+			TemposDia.put(Dias.DiaSemana(i), func.toString());
 		}
 		
 		int totalp = 0;
@@ -46,14 +47,14 @@ public class TempoDiaSemana {
 		for(int i = 0; i < 7; i++) 
 			totalp += DiasContador1[i];
 		total = totalp;
-		func.append(Funcoes.HoraFormat(totalp)).append("/");
+		func.append(Formato.FormatoDuracao(totalp)).append("/");
 		
 		totalp = 0;
 		for(int i = 0; i < 7; i++) 
 			totalp += DiasContador2[i];
 		total += totalp;
-		func.append(Funcoes.HoraFormat(totalp))
-			.append("/").append(Funcoes.HoraFormat(total));
+		func.append(Formato.FormatoDuracao(totalp))
+			.append("/").append(Formato.FormatoDuracao(total));
 		TemposDia.put("Total", func.toString());
 		return TemposDia;
 	}

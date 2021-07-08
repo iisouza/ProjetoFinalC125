@@ -3,7 +3,7 @@ import java.nio.file.Path;
 import java.util.LinkedHashMap;
 import java.util.List;
 import Bibliotecas.ProjetoFinal.Atividade.Atividade;
-import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Funcoes;
+import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Dias;
 public class AtividadesDiaSemana {
 	public static LinkedHashMap<String, String> AtividadeDia(Path arquivo) {
 		LinkedHashMap<String, String> AtividadesDia = new LinkedHashMap<>();
@@ -13,14 +13,14 @@ public class AtividadesDiaSemana {
 
 		for (Atividade atividade : ListaAtividades) {
 			if (atividade.getNomeAtleta().equals("Igor"))
-				DiasContador1[Funcoes.PosicaoElemento(atividade.getDiaSemana())]++;
+				DiasContador1[Dias.PosicaoElemento(atividade.getDiaSemana())]++;
 
 			if (atividade.getNomeAtleta().equals("Danilo"))
-				DiasContador2[Funcoes.PosicaoElemento(atividade.getDiaSemana())]++;
+				DiasContador2[Dias.PosicaoElemento(atividade.getDiaSemana())]++;
 		}
 
 		for (int i = 0; i < 7; i++)
-			AtividadesDia.put(Funcoes.DiaSemana(i), DiasContador1[i] 
+			AtividadesDia.put(Dias.DiaSemana(i), DiasContador1[i] 
 					+ "/" + DiasContador2[i]);
 		
 		return AtividadesDia;

@@ -18,28 +18,4 @@ public class Atleta {
 			+ this.nome + ", " + this.idade + " anos, " + this.profissao +
 			". Nascido em "  + this.naturalidade + " em " + this.dataNascimento);
 	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public String getProfissao() {
-		return profissao;
-	}
-
-	public String getNaturalidade() {
-		return naturalidade;
-	}
-
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public int getId() {
-		return id;
-	}
 }

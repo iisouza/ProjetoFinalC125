@@ -7,7 +7,7 @@ import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Dias;
 public class AtividadesDiaSemana {
 	public static LinkedHashMap<String, String> AtividadeDia(Path arquivo) {
 		LinkedHashMap<String, String> AtividadesDia = new LinkedHashMap<>();
-		List<Atividade> ListaAtividades = TxtUtils.LeituraTxt(arquivo);
+		List<Atividade> ListaAtividades = Leitura.LeituraTxt(arquivo);
 		int DiasContador1[] = {0, 0, 0, 0, 0, 0, 0};
 		int DiasContador2[] = {0, 0, 0, 0, 0, 0, 0};
 

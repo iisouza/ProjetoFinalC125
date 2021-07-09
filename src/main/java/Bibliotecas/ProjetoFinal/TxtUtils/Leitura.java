@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import Bibliotecas.ProjetoFinal.Atividade.Atividade;
-public class TxtUtils {
+public class Leitura {
 	public static List<Atividade> LeituraTxt(Path arquivo) {
 		List<Atividade> ListaAtividades = new ArrayList<>();
 		

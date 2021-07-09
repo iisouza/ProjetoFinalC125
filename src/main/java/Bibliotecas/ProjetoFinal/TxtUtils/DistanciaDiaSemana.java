@@ -9,27 +9,27 @@ import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Dias;
 public class DistanciaDiaSemana {
 	public static LinkedHashMap<String, String> DistanciaDia(Path arquivo) {
 		LinkedHashMap<String, String> DistanciaDia = new LinkedHashMap<>();
-		List<Atividade> ListaAtividades = TxtUtils.LeituraTxt(arquivo);
+		List<Atividade> ListaAtividades = Leitura.LeituraTxt(arquivo);
 		
-		double DiasContador1[] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-		double DiasContador2[] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+		double distanciaSomador1[] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+		double distanciaSomador2[] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 		NumberFormat total = DecimalFormat.getNumberInstance();
 		total.setMaximumFractionDigits(1);
 		
 		for (Atividade atividade:ListaAtividades) {
 			if (atividade.getNomeAtleta().equals("Igor"))
-				DiasContador1[Dias.PosicaoElemento(atividade.getDiaSemana())] 
+				distanciaSomador1[Dias.PosicaoElemento(atividade.getDiaSemana())] 
 						+= atividade.getDistancia();
 
 			if (atividade.getNomeAtleta().equals("Danilo"))
-				DiasContador2[Dias.PosicaoElemento(atividade.getDiaSemana())] 
+				distanciaSomador2[Dias.PosicaoElemento(atividade.getDiaSemana())] 
 						+= atividade.getDistancia();
 		}
 
 		for (int i = 0; i < 7; i++)
 			DistanciaDia.put(Dias.DiaSemana(i), 
-				total.format(DiasContador1[i]).replace(",", ".")
-				+ "/" + total.format(DiasContador2[i]).replace(",", "."));
+				total.format(distanciaSomador1[i]).replace(",", ".")
+				+ "/" + total.format(distanciaSomador2[i]).replace(",", "."));
 		
 		return DistanciaDia;
 	}

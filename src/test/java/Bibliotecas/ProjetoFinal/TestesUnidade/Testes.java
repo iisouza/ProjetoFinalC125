@@ -11,7 +11,7 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 import Bibliotecas.ProjetoFinal.Atividade.Atividade;
-import Bibliotecas.ProjetoFinal.TxtUtils.TxtUtils;
+import Bibliotecas.ProjetoFinal.TxtUtils.Leitura;
 import Bibliotecas.ProjetoFinal.TxtUtils.AltimetriaDiaSemana;
 import Bibliotecas.ProjetoFinal.TxtUtils.CaloriaDiaSemana;
 import Bibliotecas.ProjetoFinal.TxtUtils.DistanciaDiaSemana;
@@ -23,7 +23,7 @@ public class Testes {
 	
 	@Before
 	public void Init() {
-		ListaAtividades = TxtUtils.LeituraTxt(arquivo);
+		ListaAtividades = Leitura.LeituraTxt(arquivo);
 	}
 	
 	@Test

@@ -5,7 +5,7 @@ public class Atleta {
 	private int idade, id;
 	
 	public Atleta(int id, String nome, int idade, String profissao,
-			String naturalidade, String dataNascimento) {
+			      String naturalidade, String dataNascimento) {
 		this.id = id;
 		this.nome = nome;
 		this.idade = idade;
@@ -16,7 +16,8 @@ public class Atleta {
 	
 	public void MostraInfo() {
 		System.out.println("\t- Atleta " + this.id + ": " 
-			+ this.nome + ", " + this.idade + " anos, " + this.profissao +
-			". Nascido em "  + this.naturalidade + " em " + this.dataNascimento);
+			+ this.nome + ", " + this.idade + " anos, " 
+			+ this.profissao + ". Nascido em "  
+			+ this.naturalidade + " em " + this.dataNascimento);
 	}
 }

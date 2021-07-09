@@ -6,7 +6,7 @@ import Bibliotecas.ProjetoFinal.Atividade.Atividade;
 public class DistribuicaoAtividades {
 	public static void Panorama(Path arquivo) {
 		List<Atividade> ListaAtividades = new ArrayList<>();
-		ListaAtividades = TxtUtils.LeituraTxt(arquivo);
+		ListaAtividades = Leitura.LeituraTxt(arquivo);
 		int atividades[] = new int[6];
 		
 		for(Atividade atividade:ListaAtividades) {

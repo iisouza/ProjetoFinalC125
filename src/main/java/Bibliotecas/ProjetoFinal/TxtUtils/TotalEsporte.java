@@ -7,7 +7,7 @@ import java.util.List;
 import Bibliotecas.ProjetoFinal.Atividade.Atividade;
 public class TotalEsporte {
 	public static double[] TotalPorEsporte(Path arquivo) {
-		List<Atividade> ListaAtividades = TxtUtils.LeituraTxt(arquivo);
+		List<Atividade> ListaAtividades = Leitura.LeituraTxt(arquivo);
 		LinkedHashMap<String, String> TemposDia = new LinkedHashMap<>();
 		TemposDia = TempoDiaSemana.TempoDia(arquivo);
 		

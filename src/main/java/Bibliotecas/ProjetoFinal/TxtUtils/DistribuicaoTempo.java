@@ -10,7 +10,7 @@ import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Formato;
 public class DistribuicaoTempo {
 	public static void Panorama(Path arquivo) {
 		List<Atividade> ListaAtividades = new ArrayList<>();
-		ListaAtividades = TxtUtils.LeituraTxt(arquivo);
+		ListaAtividades = Leitura.LeituraTxt(arquivo);
 		
 		LinkedHashMap<String, String> TemposDia = new LinkedHashMap<>();
 		TemposDia = TempoDiaSemana.TempoDia(arquivo);

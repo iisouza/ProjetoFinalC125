@@ -8,7 +8,7 @@ import Bibliotecas.ProjetoFinal.FuncoesOtimizacao.Formato;
 public class TempoDiaSemana {
 	public static LinkedHashMap<String, String> TempoDia(Path arquivo) {
 		LinkedHashMap<String, String> TemposDia = new LinkedHashMap<>();
-		List<Atividade> ListaAtividades = TxtUtils.LeituraTxt(arquivo);
+		List<Atividade> ListaAtividades = Leitura.LeituraTxt(arquivo);
 		StringBuilder func = new StringBuilder();
 		String aux;
 		

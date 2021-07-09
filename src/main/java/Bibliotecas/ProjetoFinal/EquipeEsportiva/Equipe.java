@@ -24,8 +24,11 @@ public class Equipe {
 	public void MostraInfo() {
 		System.out.println("\n   A " + this.nomeEquipe + 
 			" comandada pelo treinador " + this.nomeTreinador + 
-			" foi fundada em " + this.dataFundacao + ".\n" + 
-			"   Atletas representantes: " + this.ListaAtletas.length);
+			" foi fundada em " + this.dataFundacao + ".");
+		
+		System.out.println("   Atletas representantes: " + 
+			this.ListaAtletas.length);
+		
 		for(Atleta atleta : ListaAtletas)
 			atleta.MostraInfo();
 	}
